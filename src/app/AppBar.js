@@ -1,6 +1,5 @@
-import React from 'react';
+import React, {Component} from 'react';
 import {render} from 'react-dom';
-import {deepOrange500} from 'material-ui/styles/colors';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import AppBar from 'material-ui/AppBar';
@@ -9,31 +8,25 @@ import NavigationClose from 'material-ui/svg-icons/navigation/close';
 import FlatButton from 'material-ui/FlatButton';
 import NavMenu from './Tabs';
 
-const muiTheme = getMuiTheme({
-  palette: {
-    accent1Color: deepOrange500,
-  },
-});
+const muiTheme = getMuiTheme({});
 
-function handleTouchTap() {
-  alert('onTouchTap triggered on the title component');
+class Nav extends Component {
+
+  constructor(props) {
+    super(props);
+  }
+
+  handleTouchTap() {
+    alert('onTouchTap triggered on the title component');
+  }
+
+  render() {
+    return (
+      <MuiThemeProvider muiTheme={muiTheme}>
+        <AppBar className={this.props.class}/>
+      </MuiThemeProvider>
+    );
+  }
 }
-
-const styles = {
-  title: {
-    cursor: 'pointer',
-  },
-};
-
-const Nav = () => (
-  <MuiThemeProvider muiTheme={muiTheme}>
-    <AppBar
-      title={NavMenu()}
-      iconElementLeft={<IconButton></IconButton>}
-    >
-    <div id="navmenu"></div>
-    </AppBar>
-  </MuiThemeProvider>
-);
 
 export default Nav;

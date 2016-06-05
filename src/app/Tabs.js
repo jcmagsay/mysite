@@ -1,34 +1,31 @@
-import React from 'react';
+import React, {Component} from 'react';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import {Tabs, Tab} from 'material-ui/Tabs';
 import Slider from 'material-ui/Slider';
 
-const styles = {
-  headline: {
-    fontSize: 24,
-    paddingTop: 16,
-    marginBottom: 12,
-    fontWeight: 400,
-  },
-};
-const muiTheme = getMuiTheme({
-  palette: {
-  },
-});
+const muiTheme = getMuiTheme({});
+class NavMenu extends Component{
 
-function handleActive(tab) {
-  console.info('init handleActive');
+  constructor(props) {
+    super(props);
+  }
+
+  handleActive(tab) {
+    console.info('init handleActive');
+  }
+
+  render() {
+    return (
+      <MuiThemeProvider muiTheme={muiTheme}>
+        <Tabs className={this.props.class}>
+          <Tab label="about"></Tab>
+          <Tab label="projects"></Tab>
+          <Tab label="contact" route="/home" onActive={this.handleActive}></Tab>
+        </Tabs>
+      </MuiThemeProvider>
+    );
+  }
 }
-
-const NavMenu = () => (
-  <MuiThemeProvider muiTheme={muiTheme}>
-    <Tabs>
-      <Tab label="about"></Tab>
-      <Tab label="projects"></Tab>
-      <Tab label="contact" route="/home" onActive={handleActive}></Tab>
-    </Tabs>
-  </MuiThemeProvider>
-);
 
 export default NavMenu;
