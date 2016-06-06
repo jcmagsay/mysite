@@ -1,0 +1,43 @@
+.about {
+
+}
+  .about__section {
+    display: flex;
+    height: 200px;
+    margin: 20px auto;
+    padding: 24px;
+    width: 80%;
+  }
+
+    .about__section .img {
+      display: inline-block;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+      .about__section .img.developer { background-image: url(images/jill.png); }
+      .about__section .img.designer { background-image: url(images/designProcess.png); }
+      .about__section .img.sportsenthusiast { background-image: url(images/softball.jpg); }
+      .about__section .img.adventurer { background-image: url(images/adventurer.jpg); }
+      .about__section .img.beerlover {
+        background-image: url(images/beer.jpg);
+        background-position: -30px 0;
+      }
+      .about__section .img.amateurchef {
+        background-image: url(images/food.jpg);
+        background-position: -30px 0;
+      }
+    .about__section .body {
+      display: inline-block;
+      border-radius: 50%;
+      height: 150px;
+      padding: 0 24px;
+      width: calc(100% - 150px);
+    }
+      .about__section .body .header {
+        font-size: 20px;
+        font-weight: 500;
+        text-transform: uppercase;
+      }
+      .about__section .body .description {
+
+      }
