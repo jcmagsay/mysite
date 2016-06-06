@@ -1,10 +1,13 @@
 .about {
 
 }
+  .about__container {
+    padding: 24px 0;
+  }
   .about__section {
     display: flex;
     height: 200px;
-    margin: 20px auto;
+    margin: 0 auto;
     padding: 24px;
     width: 80%;
   }
@@ -38,6 +41,8 @@
         font-weight: 500;
         text-transform: uppercase;
       }
-      .about__section .body .description {
-
+      .about__container .description {
+        font-size: 16px;
+        font-weight: 400;
+        padding: 16px 0;
       }
