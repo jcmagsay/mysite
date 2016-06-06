@@ -59,11 +59,16 @@ const config = {
           },
           {
               test: /\.(jsx|js)?$/,
-              exclude: /(node_modules|bower_components)/,
-              loaders: [
-                  'react-hot',
-                  'babel?presets[]=stage-0,presets[]=react,presets[]=es2015'
-              ]
+              exclude: /node_modules/,
+              loader: [ 'react-hot' ]
+          },
+          {
+              test: /\.(jsx|js)?$/,
+              exclude: /node_modules/,
+              loaders: ['babel-loader'],
+              query: {
+                presets: ['es2015', 'react']
+            }
           }
       ],
     },
