@@ -1,26 +1,16 @@
 var plan = require('flightplan');
 
-var appName = 'jillian_magsaysay_site';
-var username = 'admin';
+var appName = 'mysite';
+var username = 'jill';
 var startFile = 'src/www';
 
 var tmpDir = appName+'-' + new Date().getTime();
-
-// configuration
-plan.target('staging', [
-  {
-    host: '162.243.2.242',
-    username: username,
-    privateKey: '/root/.ssh/id_rsa',
-    agent: process.env.SSH_AUTH_SOCK
-  }
-]);
 
 plan.target('production', [
   {
     host: '162.243.2.242',
     username: username,
-
+    privateKey: '/root/.ssh/id_rsa',
     agent: process.env.SSH_AUTH_SOCK
   },
 //add in another server if you have more than one
