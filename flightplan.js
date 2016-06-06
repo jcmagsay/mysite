@@ -2,23 +2,15 @@ var plan = require('flightplan');
 
 var appName = 'mysite';
 var username = 'jill';
-var startFile = 'bin/www';
+var startFile = 'src/www';
 
 var tmpDir = appName+'-' + new Date().getTime();
-
-// configuration
-plan.target('staging', [
-  {
-    host: '162.243.2.242',
-    username: username,
-    agent: process.env.SSH_AUTH_SOCK
-  }
-]);
 
 plan.target('production', [
   {
     host: '162.243.2.242',
     username: username,
+
     agent: process.env.SSH_AUTH_SOCK
   },
 //add in another server if you have more than one
