@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {Link} from 'react-router';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import {Tabs, Tab} from 'material-ui/Tabs';
@@ -13,16 +14,17 @@ class NavMenu extends Component{
   }
 
   handleActive(tab) {
-    console.info('init handleActive');
+    window.location.href = `#${tab.props.route}`;
   }
 
   render() {
     return (
       <MuiThemeProvider muiTheme={muiTheme}>
         <Tabs className={this.props.class}>
-          <Tab label="about"></Tab>
-          <Tab label="projects"></Tab>
-          <Tab label="contact" route="/home" onActive={this.handleActive}></Tab>
+          <Tab label="about" route="/" onActive={this.handleActive.bind(this)}></Tab>
+          <Tab label="process" route="/process" onActive={this.handleActive.bind(this)}></Tab>
+          <Tab label="projects" route="/projects" onActive={this.handleActive.bind(this)}></Tab>
+          <Tab label="contact" route="/contact" onActive={this.handleActive.bind(this)}></Tab>
         </Tabs>
       </MuiThemeProvider>
     );

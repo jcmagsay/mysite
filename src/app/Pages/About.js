@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {Link} from 'react-router';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Paper from 'material-ui/Paper';
@@ -25,8 +26,12 @@ class About extends Component {
     const chef_txt = "Food is my biggest passion outside of my professional career. I consider myself an adventerous, amateur chef. Similar to Front End Development and Design, aesthetics and presentation techniques are crucial to considering yourself an ameteur chef.";
 
     this.sections = [
-      { id: 0, title: "nomify", body: dev_txt, showBtnGroup: true },
-      { id: 1, title: "craftbuds", body: design_txt, showBtnGroup: true }
+      { id: 0, title: "developer", body: dev_txt, showBtnGroup: true },
+      { id: 1, title: "designer", body: design_txt, showBtnGroup: true },
+      { id: 2, title: "sports enthusiast", body: sport_txt, showBtnGroup: false },
+      { id: 3, title: "adventurer", body: adventure_txt, showBtnGroup: false },
+      { id: 4, title: "beer lover", body: beer_txt, showBtnGroup: false },
+      { id: 5, title: "amateur chef", body: chef_txt, showBtnGroup: false }
     ];
   }
 

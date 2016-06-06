@@ -1,6 +1,11 @@
 /* ----------- Mobile first ----------- */
 .nav__mobile { display: flex !important; }
 .nav__desktop { display: none; }
+  .nav__desktop a {
+    display: inline-block;
+    text-align: center;
+    width: 25%;
+  }
 
 /* ----------- Non-Retina Screens ----------- */
 @media screen

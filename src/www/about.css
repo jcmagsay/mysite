@@ -6,7 +6,7 @@
   }
   .about__section {
     display: flex;
-    height: 200px;
+    min-height: 200px;
     margin: 0 auto;
     padding: 24px;
     width: 80%;

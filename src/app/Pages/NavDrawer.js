@@ -21,6 +21,7 @@ class NavDrawer extends Component {
   }
 
   handleClose() {
+    window.location.href = `#${this.route}`;
     this.setState({open: false})
   }
 
@@ -34,9 +35,9 @@ class NavDrawer extends Component {
             onLeftIconButtonTouchTap={this.handleToggle.bind(this)}
           />
           <Drawer docked={false} width={200} open={this.state.open} onRequestChange={(open) => this.setState({open})}>
-            <MenuItem onTouchTap={this.handleClose.bind(this)}>ABOUT</MenuItem>
-            <MenuItem onTouchTap={this.handleClose.bind(this)}>PROJECTS</MenuItem>
-            <MenuItem onTouchTap={this.handleClose.bind(this)}>CONTACT</MenuItem>
+            <MenuItem ref={this.route = "/about"} onTouchTap={this.handleClose.bind(this)}>ABOUT</MenuItem>
+            <MenuItem ref={this.route = "/about"} onTouchTap={this.handleClose.bind(this)}>PROJECTS</MenuItem>
+            <MenuItem ref={this.route = "/about"} onTouchTap={this.handleClose.bind(this)}>CONTACT</MenuItem>
           </Drawer>
         </section>
       </MuiThemeProvider>
