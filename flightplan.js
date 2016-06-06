@@ -1,7 +1,7 @@
 var plan = require('flightplan');
 
 var appName = 'mysite';
-var username = 'jill@162.243.2.242';
+var username = 'jill';
 var startFile = 'src/www';
 
 var tmpDir = appName+'-' + new Date().getTime();
