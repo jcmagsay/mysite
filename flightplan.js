@@ -2,7 +2,6 @@ var plan = require('flightplan');
 
 var appName = 'mysite';
 var username = 'jill';
-var pass = "test123";
 var startFile = 'bin/www';
 
 var tmpDir = appName+'-' + new Date().getTime();
@@ -12,7 +11,6 @@ plan.target('staging', [
   {
     host: '162.243.2.242',
     username: username,
-    password: pass,
     agent: process.env.SSH_AUTH_SOCK
   }
 ]);
