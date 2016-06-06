@@ -28,6 +28,9 @@ const config = {
     new TransferWebpackPlugin([{
         from: 'www'
     }, ], path.resolve(__dirname, 'src')), ],
+    resolve: {
+      extensions: ['', '.js', '.jsx']
+    },
     module: {
       preLoaders: [
           {
@@ -55,7 +58,7 @@ const config = {
               ]
           },
           {
-              test: /\.jsx?$/,
+              test: /\.(jsx|js)?$/,
               exclude: /(node_modules|bower_components)/,
               loaders: [
                   'react-hot',
