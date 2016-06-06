@@ -1,6 +1,6 @@
 var plan = require('flightplan');
 
-var appName = 'mysite';
+var appName = 'jillian_magsaysay_site';
 var username = 'admin';
 var startFile = 'src/www';
 
