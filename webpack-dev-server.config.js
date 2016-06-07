@@ -32,9 +32,6 @@ const config = {
     new TransferWebpackPlugin([{
         from: 'www'
     }, ], path.resolve(__dirname, 'src')), ],
-    resolve: {
-      extensions: ['', '.js', '.jsx']
-    },
     module: {
       preLoaders: [
           {
@@ -55,17 +52,32 @@ const config = {
               ]
           },
           {
-              test: /\.jsx?$/,
-              exclude: /node_modules/,
-              loader: [ 'react-hot' ]
+              test: /\.(jpe?g|png|gif|svg)$/i,
+              loaders: [
+                  'url?limit=8192',
+                  'img'
+              ]
+          },
+          {
+              test: /\.json$/,
+              loader: 'json'
           },
           {
               test: /\.jsx?$/,
-              exclude: /node_modules/,
-              loaders: ['babel-loader'],
-              query: {
-                presets: ['es2015', 'react']
-              }
+              exclude: /(node_modules|bower_components)/,
+              loaders: [
+                  'react-hot',
+                  'babel?presets[]=stage-0,presets[]=react,presets[]=es2015'
+              ]
+          },
+          {
+            test: /\.jsx?$/,         // Match both .js and .jsx files
+            exclude: /node_modules/,
+            loader: "babel",
+            query:
+            {
+              presets:['react', 'es2015']
+            }
           }
       ],
     },
