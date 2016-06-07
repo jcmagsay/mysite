@@ -1,8 +1,8 @@
 var plan = require('flightplan');
 
-var appName = 'jillian_magsaysay_site';
+var appName = 'mysite';
 var username = 'admin';
-var startFile = 'bin/www';
+var startFile = 'app/www';
 
 var tmpDir = appName+'-' + new Date().getTime();
 
