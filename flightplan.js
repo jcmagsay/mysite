@@ -2,7 +2,7 @@ var plan = require('flightplan');
 
 var appName = 'mysite';
 var username = 'admin';
-var startFile = 'app/www';
+var startFile = 'server/www';
 
 var tmpDir = appName+'-' + new Date().getTime();
 
