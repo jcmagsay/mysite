@@ -15,9 +15,26 @@
   <link href="styles/projects.css" rel="stylesheet" />
 </head>
 <body>
-  <div id="app">APPLICATION CONTENT</div>
+  <div id="app"></div>
+  <!-- <header id="navigation"></header>
+  <main id="content">
+    <section id="about"></section>
+  </main> -->
 
-  <script>__REACT_DEVTOOLS_GLOBAL_HOOK__ = parent.__REACT_DEVTOOLS_GLOBAL_HOOK__</script>
-  <script type="text/javascript" src="/assets/app.js"></script>
+  <!-- This script adds the Roboto font to our project. For more detail go to this site:  http://www.google.com/fonts#UsePlace:use/Collection:Roboto:400,300,500 -->
+  <script>
+    var WebFontConfig = {
+      google: { families: [ 'Roboto:400,300,500:latin' ] }
+    };
+    (function() {
+      var wf = document.createElement('script');
+      wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+      wf.type = 'text/javascript';
+      wf.async = 'true';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(wf, s);
+    })();
+  </script>
+  <script src="app.js"></script>
 </body>
 </html>
